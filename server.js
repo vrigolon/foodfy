@@ -33,6 +33,11 @@ server.get("/recipes/:index", function (req, res) {
 
 })
 
+server.get("/admin", function(req, res) {
+  return res.render("admin/admin", { items: data})
+})
+
+
 server.listen(5000, function() {
   console.log("server is running")
 })
