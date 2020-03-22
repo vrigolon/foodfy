@@ -1,0 +1,60 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+      <title>Foodfy - {{items.title}}</title>
+
+
+{% endblock %}
+
+
+
+{% block content %}
+    
+    <section class="admin-show-title">
+      <h2>Receita: {{items.title}} <span><p>Editar</p></span> </h2>
+
+      <div class="banner-recipe">
+        <img src="/images/{{items.image}}" alt="">
+      </div>
+    </section>
+
+    <main>
+      <div class="recipe-title">
+        <h1>{{items.title}}</h1>
+        <p>por {{items.author}}</p>
+      </div>
+
+      <div class="recipe">
+        <div class="recipe-ingredients-title">
+          <h2>Ingredientes</h2>
+          <p id="btnIngredients" onclick="hideShow('.recipe-ingredients', '#btnIngredients')">ESCONDER</p>
+        </div>
+        <div class="recipe-ingredients">
+          <ul>
+            {% for ingredient in items.ingredients %}
+            <li>{{ingredient}}</li>
+            {% endfor%}
+          </ul>
+        </div>
+        <div class="recipe-prepare-title">
+          <h2 >Modo de preparo</h2>
+          <p id="btnPrepare" onclick="hideShow('.recipe-preparation', '#btnPrepare')">ESCONDER</p>
+        </div>
+        <div class="recipe-preparation">
+          <ul>
+            {% for prep in items.preparation %}
+            <li>{{prep}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="recipe-information-title">
+          <h2 class="recipe-information">Informações adicionais</h2>
+          <p id="btnInfo" onclick="hideShow('.recipe-information-text', '#btnInfo')">ESCONDER</p>
+        </div>
+        <p class="recipe-information-text">{{items.information}}</p>
+        
+      </div>
+    </main>
+    <script src="/scripts.js"></script>
+
+{% endblock %}

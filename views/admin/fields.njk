@@ -1,0 +1,38 @@
+    <div class="item">
+      <div>Imagem da Receita</div>
+      <div>
+        <input 
+          type="url"
+          name="image"
+          placeholder="http://"
+          value="{{ items.image }}"
+          >
+      </div>
+    </div>
+
+    <div class="item">
+      <div>Instrutor</div>
+      <div>
+        <input 
+          type="text" 
+          name="name"
+          placeholder="Nome do instrutor"
+          value="{{ instructor.name }}"
+          >
+          
+      </div>
+    </div>
+
+    <div class="item">
+      <div>Data de nascimento</div>
+      <div>
+        <input 
+          type="date"
+          name="birth"
+          value="{{ instructor.birth }}"
+          >
+      </div>
+    </div>
+
+
+    <button type="submit">Salvar</button>

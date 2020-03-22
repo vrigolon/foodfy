@@ -7,16 +7,18 @@
 
 {% block content %}
   <main>
+    <h2>Gerenciar Receitas</h2>
+    <a href="/admin/create">Adicionar</a>
     <div class="cards-main">
-      <div>
-        <h2>Gerenciar Receitas</h2>
-      </div>
-      <div class="cards">
+      <div class="cards-admin">
       {% for item in items %}
-        <div class="card" id="{{items.indexOf(item)}}">
+        <div class="card-admin" id="{{items.indexOf(item)}}">
           <img src="/images/{{item.image}}" alt="{{item.title}}">
-          <p class="recipe-name">{{item.title}}</p>
-          <p class="recipe-author">por {{item.author}}</p>      
+          <div>
+            <p class="recipe-name-admin">{{item.title}}</p>
+            <p class="recipe-author-admin">por {{item.author}}</p>
+            <a href="/admin/recipes/{{items.indexOf(item)}}">Visualizar</a>     
+          </div>
         </div>
       {% endfor %}
 

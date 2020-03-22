@@ -17,7 +17,7 @@ body {
   font-family: 'Roboto';
 }
 
-header, section, main{
+header, section, main {
   max-width: 940px;
 }
 
@@ -51,9 +51,88 @@ main {
   margin-right: 120px;
 }
 
-.header-admin {
+
+/* //ADMIN PAGE */
+header-admin {
+  display: block;
   background-color: black;
+  height: 80px;
+  max-width: 99vw;
 }
+
+.header-admin-logo {
+  max-width: 940px;
+  width: 100%;
+  text-align: left;
+
+}
+
+.header-admin-logo a {
+  display: block;
+  padding-top: 25px;
+}
+
+main h2 {
+  margin-top: 50px;
+  font-family: Roboto-Bold;
+  font-size: 24px;
+  color: #111111;
+}
+
+.cards-admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 5px;
+  width: 100%;
+  /* display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: left;*/
+  
+  
+  
+ 
+  
+  
+}
+
+
+.card-admin div {
+  width: 100%;
+  text-align: left;
+}
+
+.card-admin img {
+  display: block;
+}
+
+.card-admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+  width: 100%;
+ 
+  
+
+}
+
+.card-admin img {
+  width: 172px;
+  height: 80px;
+  border-radius: 15px;
+}
+
+.recipe-name-admin {
+  font-size: 18px;
+  color: #111111;
+}
+
+.recipe-author-admin {
+  font-size: 14px;
+  color: #777777;
+  
+}
+
 
 /* SECTION (BANNER) */
 
@@ -84,11 +163,30 @@ main {
   max-width: 320px;
 }
 
+/* ADMIN SHOW PAGE */
+.admin-show-title {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.admin-show-title h2 {
+  margin-bottom: 20px;
+  display: flex;
+  
+}
+
+.admin-show-title h2 span {
+  font-size: 16px;
+  padding: 9px 20px;
+  background-color: purple;
+  border-radius: 4px;
+  color: #FFFFFF
+}
 
 /* CARDS */
 
 .cards-main {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .cards-main h2 {

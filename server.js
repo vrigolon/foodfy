@@ -33,9 +33,25 @@ server.get("/recipes/:index", function (req, res) {
 
 })
 
+
+
+
 server.get("/admin", function(req, res) {
   return res.render("admin/admin", { items: data})
 })
+
+
+server.get("/admin/recipes/:index", function (req, res) {
+  const recipe = data;
+  const recipeIndex = req.params.index;
+  return res.render("admin/show", { items: recipe[recipeIndex]})
+
+})
+
+server.get("/admin/create", function(req, res) {
+  return res.render("admin/create")
+})
+
 
 
 server.listen(5000, function() {
