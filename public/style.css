@@ -15,6 +15,7 @@ html {
 
 body {
   font-family: 'Roboto';
+  
 }
 
 header, section, main {
@@ -23,6 +24,7 @@ header, section, main {
 
 main {
   margin-bottom: 150px;
+  width: 100%;
 }
 
 
@@ -72,13 +74,10 @@ header-admin {
   padding-top: 25px;
 }
 
-main h2 {
-  margin-top: 50px;
-  font-family: Roboto-Bold;
-  font-size: 24px;
-  color: #111111;
+.cards-main {
+  width: 100%;
+  
 }
-
 .cards-admin {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -102,29 +101,24 @@ main h2 {
   text-align: left;
 }
 
-.card-admin img {
-  display: block;
-}
-
 .card-admin {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0px;
   width: 100%;
- 
-  
-
+  gap: 0px;
 }
 
 .card-admin img {
   width: 172px;
   height: 80px;
   border-radius: 15px;
+  margin: 0;
 }
 
 .recipe-name-admin {
   font-size: 18px;
   color: #111111;
+  
 }
 
 .recipe-author-admin {
@@ -170,17 +164,24 @@ main h2 {
 }
 
 .admin-show-title h2 {
+  display: grid;
+  grid-template-columns: 1fr 90px;
   margin-bottom: 20px;
-  display: flex;
+  width: 100%;
+  box-sizing: border-box;
   
 }
 
-.admin-show-title h2 span {
+.admin-show-title h2 span a {
   font-size: 16px;
   padding: 9px 20px;
   background-color: purple;
   border-radius: 4px;
-  color: #FFFFFF
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+  
 }
 
 /* CARDS */
