@@ -6,15 +6,17 @@
 
 
 {% block content %}
-  <main>
-    <h2>Gerenciar Receitas</h2>
-    <a href="/admin/create">Adicionar</a>
+  <section class="admin-show-title">
+      <h2>Receita: {{items.title}} <span><a class="admin-button" href="/admin/create">Adicionar</a></span> </h2>
+  </section>
+
+  <main class="admin-container">
     <div class="cards-main">
       <div class="cards-admin">
       {% for item in items %}
         <div class="card-admin" id="{{items.indexOf(item)}}">
           <img src="{{item.image}}" alt="{{item.title}}">
-          <div>
+          <div class="admin-recipe-details">
             <p class="recipe-name-admin">{{item.title}}</p>
             <p class="recipe-author-admin">por {{item.author}}</p>
             <a href="/admin/recipes/{{items.indexOf(item)}}">Visualizar</a>     

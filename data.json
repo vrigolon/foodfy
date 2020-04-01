@@ -134,19 +134,15 @@
       "information": ""
     },
     {
-      "image": "https://media.timeout.com/images/105399712/630/472/image.jpg",
-      "title": "fsdfdsf",
-      "author": "sddsf",
-      "ingredients": "dsfsdf",
-      "preparation": "sdffd",
-      "information": "sdfdff"
-    },
-    {
       "image": "https://www.receitasnestle.com.br/images/default-source/recipes/bolo-vulc%C3%A3o-de-brigadeiro_alta.jpg",
       "title": "Bolo",
       "author": "Vitor",
-      "ingredients": "Trigo e chocolate",
-      "preparation": "Bata tudo no liquidificador",
+      "ingredients": [
+        "Trigo"
+      ],
+      "preparation": [
+        "Bata tudo"
+      ],
       "information": "Forno a 180 graus"
     }
   ]

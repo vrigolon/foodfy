@@ -1,0 +1,20 @@
+{% extends "admin/layout.njk" %}
+
+
+{% block content %}
+
+<form class="card" method="post" action="action=/admin/recipes?_method=PUT">
+
+  
+  
+  <section class="details">
+    <h3>Editar receita</h3>
+
+    {% include 'admin/fields.njk' %}
+  
+  </section>
+
+</form>
+
+
+{% endblock content %}
