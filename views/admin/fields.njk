@@ -1,3 +1,31 @@
+    
+    <div class="item">
+      <div>Titulo</div>
+      <div>
+        <input 
+          type="text" 
+          name="title"
+          placeholder="Título da receita"
+          value="{{ items.name }}"
+          >
+      </div>
+    </div>
+
+
+    <div class="item">
+      <div>Autor</div>
+      <div>
+        <input 
+          type="text" 
+          name="author"
+          placeholder="Autor da receita"
+          value="{{ items.author }}"
+          >
+      </div>
+    </div>
+    
+    
+    
     <div class="item">
       <div>Imagem da Receita</div>
       <div>
@@ -11,26 +39,40 @@
     </div>
 
     <div class="item">
-      <div>Instrutor</div>
+      <div>Ingredientes</div>
       <div>
         <input 
           type="text" 
-          name="name"
-          placeholder="Nome do instrutor"
-          value="{{ instructor.name }}"
+          name="ingredients"
+          placeholder="Ingredientes da receita"
+          value="{{ items.ingredient }}"
           >
           
       </div>
     </div>
 
     <div class="item">
-      <div>Data de nascimento</div>
+      <div>Modo de Preparo</div>
       <div>
         <input 
-          type="date"
-          name="birth"
-          value="{{ instructor.birth }}"
+          type="text" 
+          name="preparation"
+          placeholder="Modo de preparo"
+          value="{{ items.preparation }}"
           >
+      </div>
+    </div>
+
+    <div class="item">
+      <div>Informações adicionais</div>
+      <div>
+        <input 
+          type="text" 
+          name="information"
+          placeholder="Informações adicionais"
+          value="{{ items.information }}"
+          >
+          
       </div>
     </div>
 
