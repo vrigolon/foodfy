@@ -68,9 +68,9 @@
       "information": ""
     },
     {
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/lasanha.png",
       "title": "Lasanha mac n' cheese",
       "author": "Juliano Vieira",
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/lasanha.png",
       "ingredients": [
         "massa pronta de lasanha",
         "400 g de presunto",
@@ -134,9 +134,9 @@
       "information": ""
     },
     {
-      "image": "https://www.receitasnestle.com.br/images/default-source/recipes/bolo-vulc%C3%A3o-de-brigadeiro_alta.jpg",
       "title": "Bolo",
       "author": "Vitor",
+      "image": "https://www.receitasnestle.com.br/images/default-source/recipes/bolo-vulc%C3%A3o-de-brigadeiro_alta.jpg",
       "ingredients": [
         "Trigo"
       ],

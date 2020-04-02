@@ -105,7 +105,7 @@ header-admin {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  gap: 0px;
+  
 }
 
 .card-admin img {

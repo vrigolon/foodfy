@@ -51,7 +51,7 @@ server.get("/admin", function(req, res) {
 server.get("/admin/recipes/:index", function (req, res) {
   const recipe = data.recipes;
   const recipeIndex = req.params.index;
-  return res.render("admin/show", { items: recipe[recipeIndex]})
+  return res.render("admin/show", { items: recipe[recipeIndex], recipeIndex })
 
 })
 
@@ -60,6 +60,13 @@ server.get("/admin/create", function(req, res) {
   return res.render("admin/create")
 })
 
+server.get("/admin/edit/:index", function (req, res) {
+  
+  const recipe = data.recipes;
+  const recipeIndex = req.params.index;
+  return res.render("admin/edit", { items: recipe[recipeIndex], recipeIndex})
+
+})
 
 server.post("/admin/create", function(req,res) {
   const keys = Object.keys(req.body)
@@ -89,6 +96,26 @@ server.post("/admin/create", function(req,res) {
   })
 })
 
+
+server.put("/admin/edit/:index", function(req,res) {
+  const keys = Object.keys(req.body)
+  const recipeIndex = req.params.index;
+
+  for(key of keys) {
+    if(req.body[key] == "") {
+      return res.send('Please, fill all fields!')
+    }
+  }
+
+  data.recipes[recipeIndex] = req.body
+
+
+  fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+    if (err) return res.send("Write file error")
+  
+    return res.redirect(`/admin/recipes/${recipeIndex}`)
+  })
+})
 
 
 server.listen(5000, function() {

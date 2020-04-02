@@ -6,7 +6,7 @@
           type="text" 
           name="title"
           placeholder="Título da receita"
-          value="{{ items.name }}"
+          value="{{ items.title }}"
           >
       </div>
     </div>
@@ -40,27 +40,32 @@
 
     <div class="item">
       <div>Ingredientes</div>
+        {%for ingredient in items.ingredients %}
       <div>
         <input 
           type="text" 
           name="ingredients[]"
           placeholder="Ingredientes da receita"
-          value="{{ items.ingredient }}"
+          value="{{ ingredient }}"
           >
           
       </div>
+          {%endfor%}
     </div>
 
     <div class="item">
       <div>Modo de Preparo</div>
+      {%for preparation in items.preparation %}
       <div>
         <input 
           type="text" 
           name="preparation[]"
           placeholder="Modo de preparo"
-          value="{{ items.preparation }}"
+          value="{{ preparation }}"
           >
       </div>
+      {%endfor%}
+
     </div>
 
     <div class="item">
