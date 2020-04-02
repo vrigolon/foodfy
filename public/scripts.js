@@ -32,10 +32,10 @@ function hideShow(cssClass, button) {
 
 
 function addIngredientField() {
-  document.getElementById('ingredients').innerHTML += '<br><input type="text"  name="ingredients[]"  placeholder="Ingredientes da receita">';
+  document.getElementById('ingredients').innerHTML += '<input type="text"  name="ingredients[]"  placeholder="Ingredientes da receita"><br>';
 }
 
 function addPrepareField(){
-  document.getElementById('prepare').innerHTML += '<br><input type="text"  name="ingredients[]"  placeholder="Modo de preparo">';
+  document.getElementById('prepare').innerHTML += '<input type="text"  name="preparation[]"  placeholder="Modo de preparo"><br>';
 }
 
