@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<form class="card" method="post" action="/admin/create">
+<form method="post" action="/admin/create">
   
   
   <section class="details">
@@ -48,10 +48,11 @@
           >
       </div>
     </div>
+    
 
     <div class="item">
       <div>Ingredientes</div>
-      <div>
+      <div id="ingredients">
         <input 
           type="text" 
           name="ingredients[]"
@@ -60,11 +61,12 @@
           >
           
       </div>
+        <input type="button" onClick="addIngredientField()" value="+ ingrediente"/>
     </div>
 
     <div class="item">
       <div>Modo de Preparo</div>
-      <div>
+      <div id="prepare">
         <input 
           type="text" 
           name="preparation[]"
@@ -72,6 +74,7 @@
           value="{{ preparation }}"
           >
       </div>
+        <input type="button" onClick="addPrepareField()" value="+ modo de preparo"/>
 
     </div>
 

@@ -29,3 +29,13 @@ function hideShow(cssClass, button) {
     }, 1000);
   }
 } 
+
+
+function addIngredientField() {
+  document.getElementById('ingredients').innerHTML += '<br><input type="text"  name="ingredients[]"  placeholder="Ingredientes da receita">';
+}
+
+function addPrepareField(){
+  document.getElementById('prepare').innerHTML += '<br><input type="text"  name="ingredients[]"  placeholder="Modo de preparo">';
+}
+
