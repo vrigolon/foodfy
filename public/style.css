@@ -213,6 +213,7 @@ header-admin {
     margin-bottom: 10px;
     font-family: 'Roboto';
     font-size: 16px;
+    padding: 0 20px 0 20px;
   }
 
   .item {
@@ -231,6 +232,7 @@ header-admin {
 
   .item input[type='button'] {
     color: #6558C3;
+    font-weight: 700;
     cursor: pointer;
     margin-top: 5px;
   }
