@@ -74,3 +74,15 @@ exports.put = function(req,res) {
   })
 }
 
+exports.delete = function(req,res) {
+  const recipeIndex = req.params.index;
+  
+  data.recipes.splice(recipeIndex, 1)
+  
+  
+  fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+    if (err) return res.send("Write file error")
+  
+    return res.redirect(`/admin`)
+  })
+}

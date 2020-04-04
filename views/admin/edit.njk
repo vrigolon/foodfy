@@ -3,11 +3,20 @@
 
 {% block content %}
 
-<form method="post" action="/admin/edit/{{recipeIndex}}?_method=PUT">
 
   
-  <section class="admin-show-title">
-      <h2>Editando receita <span><button type="submit">Salvar receita</button></span> </h2>
+  <section class="admin-edit-title">
+      <h2>Editando receita 
+        <span>
+          <form action="/admin/recipe/{{recipeIndex}}?_method=DELETE" method="POST">
+            <button type="submit">Deletar</button>
+          </form>
+        </span>
+<form method="post" action="/admin/edit/{{recipeIndex}}?_method=PUT">
+        <span>
+          <button type="submit">Salvar receita</button>
+        </span>
+      </h2>
   </section>
   <section class="details">
 

@@ -130,7 +130,7 @@ header-admin {
 
 .admin-recipe-details a {
   text-decoration: none;
-  color: color: #6558C3;
+  color: #6558C3;
   font-size: 14px;
   font-weight: 700;
   font-family: 'Roboto';
@@ -168,23 +168,38 @@ header-admin {
 }
 
 /* ADMIN SHOW PAGE */
-.admin-show-title {
+.admin-show-title,
+.admin-edit-title {
   margin-top: 50px;
   width: 100%;
+}
+
+.admin-show-title h2,
+.admin-edit-title h2 {
+  
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 24px;
 }
 
 .admin-show-title h2 {
   display: grid;
   grid-template-columns: 1fr 150px;
-  margin-bottom: 20px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 24px;
-  
+}
+
+.admin-edit-title h2 {
+  display: grid;
+  grid-template-columns: 1fr 100px 150px;
+}
+
+.admin-edit-title h2 :first-child form button  {
+  background: red;
 }
 
 .admin-show-title h2 span a,
-.admin-show-title h2 span button {
+.admin-show-title h2 span button,
+.admin-edit-title h2 span button {
   font-size: 16px;
   font-family: 'Roboto';
   font-weight: 700;
