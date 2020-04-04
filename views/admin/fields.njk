@@ -86,12 +86,14 @@
     <div class="item">
       <div>Informações adicionais</div>
       <div>
-        <input 
-          type="text" 
+        <textarea
+          class="admin-info-textarea"
+          rows="15"
           name="information"
           placeholder="Informações adicionais"
-          value="{{ items.information }}"
-          >
+          
+          >{{ items.information }}
+        </textarea>
           
       </div>
     </div>

@@ -82,7 +82,8 @@ header-admin {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 5px;
-  width: 100%;
+  justify-items: initial;
+  
   /* display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -103,8 +104,9 @@ header-admin {
 
 .card-admin {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 172px 1fr;
   width: 100%;
+  gap: 20px;
 
 }
 
@@ -124,7 +126,15 @@ header-admin {
 .recipe-author-admin {
   font-size: 14px;
   color: #777777;
-  
+}
+
+.admin-recipe-details a {
+  text-decoration: none;
+  color: color: #6558C3;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Roboto';
+
 }
 
 
@@ -169,6 +179,7 @@ header-admin {
   margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
+  font-size: 24px;
   
 }
 
@@ -178,7 +189,7 @@ header-admin {
   font-family: 'Roboto';
   font-weight: 700;
   padding: 9px 20px;
-  background-color: purple;
+  background-color:#6558C3;
   border-radius: 4px;
   color: #FFFFFF;
   text-decoration: none;
@@ -186,6 +197,58 @@ header-admin {
   margin: 0;
   
 }
+
+/* Admin fields */
+
+.item input[type='text'],
+.item input[type='url'] {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  height: 49px;
+  }
+
+  .item input {
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-size: 16px;
+  }
+
+  .item {
+    margin-bottom: 30px;
+
+  }
+
+  .item > div{
+    color: #111111;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+  }
+
+  .item input[type='button'] {
+    color: #6558C3;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  .item input[name='information'] {
+    height: 257px;
+  }
+
+  .admin-info-textarea {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin-bottom: 150px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    
+  }
 
 /* CARDS */
 
