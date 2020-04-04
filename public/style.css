@@ -214,37 +214,37 @@ header-admin {
 
   }
 
-  .item input {
+.item input {
     margin-bottom: 10px;
     font-family: 'Roboto';
-  }
+}
 
-  .item {
+.item {
     margin-bottom: 30px;
 
-  }
+}
 
-  .item > div{
+.item > div{
     color: #111111;
     font-family: 'Roboto';
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 10px;
 
-  }
+}
 
-  .item input[type='button'] {
+.item input[type='button'] {
     color: #6558C3;
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
     margin-top: 5px;
-  }
+}
   
-  .admin-info-textarea {
+.admin-info-textarea {
     resize: none;
     margin-bottom: 150px;
-  }
+}
 
 /* CARDS */
 
@@ -397,4 +397,6 @@ header-admin {
 .recipe-information-text {
   margin-top: 20px;
   line-height: 28px;
+  white-space: pre-line;
+  white-space: pre-wrap;
 }
