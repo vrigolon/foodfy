@@ -201,19 +201,22 @@ header-admin {
 /* Admin fields */
 
 .item input[type='text'],
-.item input[type='url'] {
+.item input[type='url'],
+.admin-info-textarea {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
   border-radius: 4px;
-  height: 49px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  font-size: 16px;
+
   }
 
   .item input {
     margin-bottom: 10px;
     font-family: 'Roboto';
-    font-size: 16px;
-    padding: 0 20px 0 20px;
   }
 
   .item {
@@ -233,23 +236,14 @@ header-admin {
   .item input[type='button'] {
     color: #6558C3;
     font-weight: 700;
+    font-size: 16px;
     cursor: pointer;
     margin-top: 5px;
   }
-
-  .item input[name='information'] {
-    height: 257px;
-  }
-
+  
   .admin-info-textarea {
-    width: 100%;
-    background: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
+    resize: none;
     margin-bottom: 150px;
-    font-family: 'Roboto';
-    font-size: 16px;
-    
   }
 
 /* CARDS */
