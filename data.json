@@ -1,9 +1,9 @@
 {
   "recipes": [
     {
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
       "title": "Triplo bacon burger",
       "author": "Jorge Relato",
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
       "ingredients": [
         "3 kg de carne moída (escolha uma carne magra e macia)",
         "300 g de bacon moído",
@@ -144,19 +144,6 @@
         "Bata tudo"
       ],
       "information": "Forno a 180 graus"
-    },
-    {
-      "image": "http://tes.com",
-      "title": "teste",
-      "author": "teste",
-      "ingredients": [
-        "123",
-        "456"
-      ],
-      "preparation": [
-        "sssss"
-      ],
-      "information": "eeeeee"
     }
   ]
 }
