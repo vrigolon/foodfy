@@ -43,44 +43,51 @@
       <div>Ingredientes</div>
       <div id="ingredients">
         {% for ingredient in items.ingredients %}
-        <input 
-          type="text" 
-          name="ingredients[]"
-          placeholder="Ingredientes da receita"
-          value="{{ ingredient }}"
-          ><br>
-        {%else%}
+        <div class="ingredient">
           <input 
-          type="text" 
-          name="ingredients[]"
-          placeholder="Ingredientes da receita"
-          ><br>
+            type="text" 
+            name="ingredients[]"
+            placeholder="Ingredientes da receita"
+            value="{{ ingredient }}"
+          >
+        </div>
+        {%else%}
+        <div class="ingredient">
+          <input 
+            type="text" 
+            name="ingredients[]"
+            placeholder="Novo ingrediente"
+            value=""
+            ><br>
+        </div>
         {%endfor%}
-          
       </div>
-        <input type="button" onClick="addIngredientField()" value="Adicionar novo ingrediente"/>
+        <button type="button" class="add-ingredient">Add ingredient</button>
     </div>
 
     <div class="item">
       <div>Modo de Preparo</div>
       <div id="prepare">
         {% for preparation in items.preparation %}
-        <input 
-          type="text" 
-          name="preparation[]"
-          placeholder="Modo de preparo"
-          value="{{ preparation }}"
-          ><br>
+        <div class="prepareField">
+          <input 
+            type="text" 
+            name="preparation[]"
+            placeholder="Modo de preparo"
+            value="{{ preparation }}"
+            ><br>
+        </div>
         {%else%}
-        <input 
-          type="text" 
-          name="preparation[]"
-          placeholder="Modo de preparo"
-          ><br>
+        <div class="prepareField">
+          <input
+            type="text" 
+            name="preparation[]"
+            placeholder="Novo passo"
+            ><br>
+        </div>
         {%endfor%}
       </div>
-        <input type="button" onClick="addPrepareField()" value="Adicionar novo passo"/>
-
+        <button type="button" class="add-prepare">Adicionar passo</button>
     </div>
 
     <div class="item">
@@ -97,3 +104,5 @@
           
       </div>
     </div>
+
+  

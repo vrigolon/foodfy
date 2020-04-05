@@ -3,35 +3,36 @@
   <body>
     <head>
 
+
       {% block head %}
         <title>Foodfy</title>
       {% endblock %}
 
     <link rel="stylesheet" href="/style.css">
-    <script src="/scripts.js"></script>
 
 
     </head>
 
   
-  <header-admin>
-  <div class="header-admin-logo">
-    <a href="/"><img  src="/images/logowhite.png" alt="Foodfy" style="border: none;"/></a>
-  </div>
-  </header-admin>
+    <header-admin>
+    <div class="header-admin-logo">
+      <a href="/"><img  src="/images/logowhite.png" alt="Foodfy" style="border: none;"/></a>
+    </div>
+    </header-admin>
 
 
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
 
     
-  <footer>
-    <div class="footer">
-      <p>Todos direitos reservados, receitas Foodfy.</p>
-    </div>
-  </footer>
+    <footer>
+      <div class="footer">
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+      </div>
+    </footer>
 
 
+    <script src="/scripts.js"></script>
   </body>
   
 </html>

@@ -46,7 +46,7 @@ exports.post = function(req,res) {
     preparation,
     information
   })
-  
+  console.log(req.body)
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
     if (err) return res.send("Write file error")
   
@@ -64,7 +64,9 @@ exports.put = function(req,res) {
     }
   }
   
-  data.recipes[recipeIndex] = req.body
+  data.recipes[recipeIndex] = {...req.body}
+
+  console.log(req.body)
   
   
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
