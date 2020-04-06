@@ -18,7 +18,7 @@ body {
   
 }
 
-header, section, main {
+header, section, section-header, main {
   max-width: 940px;
 }
 
@@ -175,7 +175,7 @@ header-admin {
 }
 
 .admin-show-title h2,
-.admin-edit-title {
+.admin-edit-title h2 {
   
   margin-bottom: 20px;
   width: 100%;
@@ -183,7 +183,7 @@ header-admin {
   font-size: 24px;
 }
 
-.admin-show-title h2 {
+.admin-show-title {
   display: grid;
   grid-template-columns: 1fr 150px;
 }
@@ -197,8 +197,8 @@ header-admin {
   background: red;
 }
 
-.admin-show-title h2 span a,
-.admin-show-title h2 span button,
+.admin-show-title span a,
+.admin-show-title span button,
 .admin-edit-title span button {
   font-size: 16px;
   font-family: 'Roboto';
