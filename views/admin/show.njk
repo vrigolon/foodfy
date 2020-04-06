@@ -1,4 +1,4 @@
-{% extends "layout.njk" %}
+{% extends "admin/layout.njk" %}
 
 {% block head %}
       <title>Foodfy - {{items.title}}</title>
@@ -9,7 +9,10 @@
 
 
 {% block content %}
-    <section>
+    
+    <section class="admin-show-title">
+      <h2>{{items.title}}</h2><span><a href="/admin/edit/{{recipeIndex}}">Editar receita</a></span>
+
       <div class="banner-recipe">
         <img src="{{items.image}}" alt="">
       </div>
@@ -52,6 +55,5 @@
         
       </div>
     </main>
-    <script src="/scripts.js"></script>
 
 {% endblock %}
