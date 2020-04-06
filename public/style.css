@@ -175,7 +175,7 @@ header-admin {
 }
 
 .admin-show-title h2,
-.admin-edit-title h2 {
+.admin-edit-title {
   
   margin-bottom: 20px;
   width: 100%;
@@ -188,18 +188,18 @@ header-admin {
   grid-template-columns: 1fr 150px;
 }
 
-.admin-edit-title h2 {
+.admin-edit-title {
   display: grid;
   grid-template-columns: 1fr 100px 150px;
 }
 
-.admin-edit-title h2 :first-child form button  {
+.admin-edit-title span form button  {
   background: red;
 }
 
 .admin-show-title h2 span a,
 .admin-show-title h2 span button,
-.admin-edit-title h2 span button {
+.admin-edit-title span button {
   font-size: 16px;
   font-family: 'Roboto';
   font-weight: 700;
@@ -248,12 +248,12 @@ header-admin {
 
 }
 
-.item input[type='button'] {
+.item button {
     color: #6558C3;
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 5px;
+    
 }
   
 .admin-info-textarea {

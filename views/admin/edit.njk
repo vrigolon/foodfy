@@ -6,18 +6,18 @@
 
   
   <section class="admin-edit-title">
-      <h2>Editando receita 
+      <h2>Editando receita </h2>
         <span>
           <form action="/admin/recipe/{{recipeIndex}}?_method=DELETE" method="POST">
             <button type="submit">Deletar</button>
           </form>
         </span>
-<form method="post" action="/admin/edit/{{recipeIndex}}?_method=PUT">
         <span>
-          <button type="submit">Salvar receita</button>
+          <button form ="update" type="submit">Salvar receita</button>
         </span>
-      </h2>
+        
   </section>
+<form id="update" method="post" action="/admin/edit/{{recipeIndex}}?_method=PUT">
   <section class="details">
 
     {% include 'admin/fields.njk' %}
