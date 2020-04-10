@@ -277,9 +277,13 @@ header-admin {
   gap: 20px;
 }
 
-.card {
+
+.card a  {
+  text-decoration: none;
   cursor: pointer;
 }
+
+
 
 .card img {
   width: 300px;
@@ -291,6 +295,8 @@ header-admin {
   font-size: 18px;
   color: #111111;
   margin-top: 20px;
+  
+
 }
 
 .recipe-author {
