@@ -1,30 +1,31 @@
-const fs = require('fs')
-const data = require("../../../data.json")
+// const fs = require('fs')
+// const data = require("../../../data.json")
+const Recipes = require('../models/Recipes')
+
 
 
 exports.index = function(req, res) {
-  return res.render("admin/admin", { items: data.recipes})
+    Recipes.all(function(recipes) {
+      return res.render("admin/admin", { items: recipes })
+
+    })
 }
+
 
 exports.recipe = function (req, res) {
-  const recipe = data.recipes;
-  const recipeIndex = req.params.index;
-  return res.render("admin/show", { items: recipe[recipeIndex], recipeIndex })
-  
-}
+  Recipes.find(req.params.id, function(recipe) {
+    if (!recipe) return res.send("Recipe not found!")
 
+    const recipeIndex = req.params.index;
+    return res.render("admin/show", { items: recipe, recipeIndex })
+  })
+}
+  
 exports.create = function(req, res) {
 
   return res.render("admin/create")
 }
 
-exports.edit = function (req, res) {
-
-  const recipe = data.recipes;
-  const recipeIndex = req.params.index;
-  return res.render("admin/edit", { items: recipe[recipeIndex], recipeIndex})
-  
-}
 
 exports.post = function(req,res) {
   const keys = Object.keys(req.body)
@@ -34,57 +35,50 @@ exports.post = function(req,res) {
     }
   }
   
-  let { image, title, author, ingredients, preparation, information } = req.body
-  
-  
-  
-  data.recipes.push({
-    image,
-    title,
-    author,
-    ingredients,
-    preparation,
-    information
-  })
-  console.log(req.body)
-  fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
-    if (err) return res.send("Write file error")
-  
+ 
+  Recipes.create(req.body, function() {
     return res.redirect("/admin")
   })
 }
 
+
+exports.edit = function (req, res) {
+  Recipes.find(req.params.id, function(recipe) {
+    if (!recipe) return res.send("Recipe not found!")
+      
+      const recipeIndex = req.params.id;
+      return res.render("admin/edit", { items: recipe, recipeIndex})
+    
+  })
+  
+  
+}
+
+
+
+
+
+
+
+
+
 exports.put = function(req,res) {
   const keys = Object.keys(req.body)
-  const recipeIndex = req.params.index;
+  const recipeId = req.params.id;
   
-  for(key of keys) {
-    if(req.body[key] == "") {
-      return res.send('Please, fill all fields!')
-    }
-  }
+  // for(key of keys) {
+  //   if(req.body[key] == "") {
+  //     return res.send('Please, fill all fields!')
+  //   }
+  // }
   
-  data.recipes[recipeIndex] = {...req.body}
-
-  console.log(req.body)
-  
-  
-  fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
-    if (err) return res.send("Write file error")
-  
-    return res.redirect(`/admin/recipes/${recipeIndex}`)
+  Recipes.update(req.body, function() {
+    return res.redirect(`/admin/recipes/${recipeId}`)
   })
 }
 
 exports.delete = function(req,res) {
-  const recipeIndex = req.params.index;
-  
-  data.recipes.splice(recipeIndex, 1)
-  
-  
-  fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
-    if (err) return res.send("Write file error")
-  
+  Recipes.delete(req.body.id, function() {  
     return res.redirect(`/admin`)
   })
 }

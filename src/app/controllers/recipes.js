@@ -1,7 +1,10 @@
-const data = require("../../../data.json")
+const Recipes = require('../models/Recipes')
+
 
 exports.index = function(req, res) {
-  return res.render("index", { items: data.recipes})
+  Recipes.all(function(recipes) {
+  return res.render("index", { items: recipes})
+  })
 }
 
 exports.about = function(req, res) {
@@ -9,14 +12,17 @@ exports.about = function(req, res) {
 }
 
 exports.recipes = function(req, res) {
-  return res.render("recipes", { items: data.recipes})
+  Recipes.all(function(recipes) {
+  return res.render("recipes", { items: recipes})
+  })
 }
 
 exports.recipe = function (req, res) {
-  const recipe = data.recipes;
-  const recipeIndex = req.params.index;
-  return res.render("recipe", { items: recipe[recipeIndex]})
+  Recipes.find(req.params.id, function(recipe) {
+    if (!recipe) return res.send("Recipe not found!")
 
+  return res.render("recipe", { items: recipe })
+  })
 }
 
 

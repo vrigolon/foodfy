@@ -7,16 +7,16 @@ const admin = require('./src/app/controllers/admin')
 routes.get("/", recipes.index)
 routes.get("/about", recipes.about)
 routes.get("/recipes", recipes.recipes)
-routes.get("/recipes/:index", recipes.recipe)
+routes.get("/recipes/:id", recipes.recipe)
 
 
 routes.get("/admin", admin.index)
-routes.get("/admin/recipes/:index", admin.recipe)
+routes.get("/admin/recipes/:id", admin.recipe)
 routes.get("/admin/create", admin.create)
-routes.get("/admin/edit/:index", admin.edit)
+routes.get("/admin/edit/:id", admin.edit)
 routes.post("/admin/create", admin.post)
-routes.put("/admin/edit/:index", admin.put)
-routes.delete("/admin/recipe/:index", admin.delete)
+routes.put("/admin/edit/:id", admin.put)
+routes.delete("/admin/recipe/:id", admin.delete)
 
 
 module.exports = routes

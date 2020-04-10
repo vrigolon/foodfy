@@ -10,6 +10,8 @@
         <span>
           <form action="/admin/recipe/{{recipeIndex}}?_method=DELETE" method="POST">
             <button type="submit">Deletar</button>
+            <input type="hidden" name="id" value="{{items.id}}">
+
           </form>
         </span>
         <span>
@@ -22,8 +24,8 @@
 
     {% include 'admin/fields.njk' %}
   
+    <input type="hidden" name="id" value="{{items.id}}">
   </section>
-
 </form>
 
 
