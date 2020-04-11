@@ -1,28 +1,27 @@
 const Recipes = require('../models/Recipes')
 
+module.exports = {
+  index(req, res) {
+    Recipes.all(function(recipes) {
+    return res.render("index", { items: recipes})
+    })
+  },
+  about(req, res) {
+    return res.render("about")
+  },
 
-exports.index = function(req, res) {
-  Recipes.all(function(recipes) {
-  return res.render("index", { items: recipes})
-  })
-}
+  recipes(req, res) {
+    Recipes.all(function(recipes) {
+    return res.render("recipes", { items: recipes})
+    })
+  },
+  recipe(req, res) {
+    Recipes.find(req.params.id, function(recipe) {
+      if (!recipe) return res.send("Recipe not found!")
 
-exports.about = function(req, res) {
-  return res.render("about")
-}
-
-exports.recipes = function(req, res) {
-  Recipes.all(function(recipes) {
-  return res.render("recipes", { items: recipes})
-  })
-}
-
-exports.recipe = function (req, res) {
-  Recipes.find(req.params.id, function(recipe) {
-    if (!recipe) return res.send("Recipe not found!")
-
-  return res.render("recipe", { items: recipe })
-  })
+    return res.render("recipe", { items: recipe })
+    })
+  }
 }
 
 
