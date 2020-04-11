@@ -56,22 +56,36 @@ main {
 
 /* //ADMIN PAGE */
 header-admin {
+  width: 100%;
   display: block;
   background-color: black;
   height: 80px;
-  max-width: 99vw;
+  width: 99vw;
 }
 
 .header-admin-logo {
-  max-width: 940px;
-  width: 100%;
-  text-align: left;
-
+  width: 940px;
 }
 
 .header-admin-logo a {
-  display: block;
-  padding-top: 25px;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 700;
+  
+}
+
+.header-admin-logo :nth-child(2) {
+  margin-right: 30px;
+  vertical-align: 0.5em;
+}
+
+.header-admin-logo :nth-child(3) {
+  vertical-align: 0.5em;
+}
+
+.header-admin-logo :first-child {
+  margin-right: 50px;
 }
 
 .cards-main {
