@@ -1,4 +1,5 @@
 const Recipes = require('../models/Recipes')
+const Chefs = require('../models/Chefs')
 
 module.exports = {
   index(req, res) {
@@ -20,6 +21,11 @@ module.exports = {
       if (!recipe) return res.send("Recipe not found!")
 
     return res.render("recipe", { items: recipe })
+    })
+  },
+  chefs(req, res) {
+    Chefs.all(function(chefs) {
+    return res.render("chefs", { items: chefs})
     })
   }
 }

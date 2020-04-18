@@ -355,6 +355,24 @@ header-admin {
   margin-bottom: 10px;
 }
 
+/* CHEFS PAGE */
+.cards-chefs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card-chefs {
+  justify-items: start;
+  justify-content: space-between;
+  text-align: left;
+  
+}
+
+.card-chefs img {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+}
 
 /* ABOUT PAGE */
 
