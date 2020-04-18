@@ -7,7 +7,7 @@ const Recipes = require('../models/Recipes')
 module.exports = {
   index(req, res) {
       Recipes.all(function(recipes) {
-        return res.render("admin/admin", { items: recipes })
+        return res.render("admin/recipes/index", { items: recipes })
 
       })
   },
@@ -16,12 +16,12 @@ module.exports = {
         if (!recipe) return res.send("Recipe not found!")
     
         const recipeIndex = req.params.index;
-        return res.render("admin/show", { items: recipe, recipeIndex })
+        return res.render("admin/recipes/show", { items: recipe, recipeIndex })
       })
   },
   create(req, res) {
 
-    return res.render("admin/create")
+    return res.render("admin/recipes/create")
   },
   post(req,res) {
     const keys = Object.keys(req.body)
@@ -40,7 +40,7 @@ module.exports = {
       if (!recipe) return res.send("Recipe not found!")
         
         const recipeIndex = req.params.id;
-        return res.render("admin/edit", { items: recipe, recipeIndex})
+        return res.render("admin/recipes/edit", { items: recipe, recipeIndex})
       
     })  
   },
