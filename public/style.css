@@ -33,6 +33,41 @@ main {
 .header-menu {
   margin: 36px 0 30px 0;
   width: 100%;
+
+}
+.header-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header-input {
+  width: 100%;
+  margin: 28px 0px;
+}
+
+.header-input form {
+  text-align: right;
+}
+
+.header-input form input {
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #999999;
+  padding: 10px 15px;
+  width: 246px;
+
+}
+
+.header-input form button {
+  padding: 9px 20px;
+  background: #6558C3;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  border-radius: 4px;
+  margin-left: 8px;
+
 }
 
 .menu {

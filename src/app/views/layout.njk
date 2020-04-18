@@ -12,14 +12,26 @@
   </head>
 
   <body>
-    <header>
-    <div class="header-menu">
-      
-      <a class="logo" href="/"><img  src="/images/logo.png" alt="Foodfy"></a>
-      
-      <a class="menu" href="/about">Sobre</a>
-      <a class="menu" href="/recipes">Receitas</a>
-    </div>
+    <header class="header-index">
+      <div class="header-menu">
+        
+        <a class="logo" href="/"><img  src="/images/logo.png" alt="Foodfy"></a>
+        
+        <a class="menu" href="/about">Sobre</a>
+        <a class="menu" href="/recipes">Receitas</a>
+        <a class="menu" href="/chefs">Chefs</a>
+      </div>
+      <div class="header-input">
+        <form action="/" method="GET">
+          <input 
+            type="text"
+            name="filter"
+            placeholder="Buscar uma receita"
+            value={{filter}}
+          >
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
   </header>
 
 
