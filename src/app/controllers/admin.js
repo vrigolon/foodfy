@@ -1,6 +1,7 @@
 // const fs = require('fs')
 // const data = require("../../../data.json")
 const Recipes = require('../models/Recipes')
+const Chefs = require('../models/Chefs')
 
 
 
@@ -61,6 +62,11 @@ module.exports = {
   delete(req,res) {
     Recipes.delete(req.body.id, function() {  
       return res.redirect(`/admin`)
+    })
+  },
+  chefs(req, res) {
+    Chefs.all(function(chefs) {
+    return res.render("admin/chefs/index", { items: chefs})
     })
   }
 }
