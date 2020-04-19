@@ -3,9 +3,23 @@ const Chefs = require('../models/Chefs')
 
 module.exports = {
   index(req, res) {
-    Recipes.all(function(recipes) {
-    return res.render("index", { items: recipes})
-    })
+
+    const { filter } = req.query
+
+    if(filter) {
+
+      Recipes.findBy(filter, function(recipes) {
+        return res.render("recipes", { items: recipes, filter})
+
+
+      })
+
+      }else {
+
+      Recipes.all(function(recipes) {
+      return res.render("index", { items: recipes})
+      })
+    }
   },
   about(req, res) {
     return res.render("about")
