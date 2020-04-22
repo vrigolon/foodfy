@@ -84,5 +84,13 @@ module.exports = {
     Chefs.create(req.body, function() {
       return res.redirect("/admin/chefs")
     })
-  }
+  },
+  detailChef(req, res) {
+    Chefs.find(req.params.id, function(chef) {
+      if (!chef) return res.send("Chef not found!")
+  
+      const recipeIndex = req.params.index;
+      return res.render("admin/chefs/show", { items: chef, recipeIndex})
+    })
+}
 }

@@ -33,5 +33,14 @@ module.exports = {
 
       callback(results.rows[0])
     })
+  },
+  find(id, callback) {
+    db.query(`
+    SELECT chefs.* 
+    FROM chefs
+    WHERE chefs.id = $1`, [id], function(err, results) {
+      if(err) throw `"Database Error!" ${err}`
+      callback(results.rows[0])
+    })
   }
 }

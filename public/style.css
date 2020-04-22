@@ -376,9 +376,17 @@ header-admin {
 .card-chefs div :first-child {
   font-size: 18px;
   color: #111111;
+  margin-bottom: 10px;
 }
 
-.card-chefs div :nth-child(2) {
+.card-chef-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6558C3;
+  text-decoration: none;
+  
+}
+.card-chefs-recipe-count {
   font-size: 14px;
   color: #666666;
 }
@@ -388,6 +396,7 @@ header-admin {
   height: 64px;
   border-radius: 32px;
 }
+
 
 /* ABOUT PAGE */
 

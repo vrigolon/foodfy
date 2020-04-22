@@ -23,6 +23,7 @@ routes.delete("/admin/recipe/:id", admin.delete)
 routes.get("/admin/chefs", admin.chefsIndex)
 routes.get("/admin/chefs/create", admin.createChef)
 routes.post("/admin/chefs/create", admin.postChef)
+routes.get("/admin/chefs/:id", admin.detailChef)
 
 
 
