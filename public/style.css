@@ -359,13 +359,15 @@ header-admin {
 .cards-chefs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
   
 }
 
-.card-chefs {
+.card-chefs a{
   display: flex;
   text-align: left;
   align-items: center;
+  text-decoration: none;
 
 }
 
@@ -373,7 +375,7 @@ header-admin {
   margin-left: 20px;
 }
 
-.card-chefs div :first-child {
+.card-chefs a div :first-child {
   font-size: 18px;
   color: #111111;
   margin-bottom: 10px;
