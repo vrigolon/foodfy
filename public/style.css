@@ -33,6 +33,41 @@ main {
 .header-menu {
   margin: 36px 0 30px 0;
   width: 100%;
+
+}
+.header-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header-input {
+  width: 100%;
+  margin: 28px 0px;
+}
+
+.header-input form {
+  text-align: right;
+}
+
+.header-input form input {
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #999999;
+  padding: 10px 15px;
+  width: 246px;
+
+}
+
+.header-input form button {
+  padding: 9px 20px;
+  background: #6558C3;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  border-radius: 4px;
+  margin-left: 8px;
+
 }
 
 .menu {
@@ -56,22 +91,37 @@ main {
 
 /* //ADMIN PAGE */
 header-admin {
+  width: 100%;
   display: block;
   background-color: black;
   height: 80px;
-  max-width: 99vw;
+  width: 99vw;
 }
 
 .header-admin-logo {
-  max-width: 940px;
-  width: 100%;
-  text-align: left;
-
+  width: 940px;
 }
 
 .header-admin-logo a {
-  display: block;
-  padding-top: 25px;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  
+}
+
+.header-admin-logo :nth-child(2) {
+  margin-right: 30px;
+  vertical-align: 0.5em;
+}
+
+.header-admin-logo :nth-child(3) {
+  vertical-align: 0.5em;
+}
+
+.header-admin-logo :first-child {
+  margin-right: 50px;
 }
 
 .cards-main {
@@ -217,7 +267,8 @@ header-admin {
 
 .item input[type='text'],
 .item input[type='url'],
-.admin-info-textarea {
+.admin-info-textarea,
+.item select {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
@@ -229,7 +280,8 @@ header-admin {
 
   }
 
-.item input {
+.item input,
+.item select {
     margin-bottom: 10px;
     font-family: 'Roboto';
 }
@@ -277,9 +329,13 @@ header-admin {
   gap: 20px;
 }
 
-.card {
+
+.card a  {
+  text-decoration: none;
   cursor: pointer;
 }
+
+
 
 .card img {
   width: 300px;
@@ -291,6 +347,8 @@ header-admin {
   font-size: 18px;
   color: #111111;
   margin-top: 20px;
+  
+
 }
 
 .recipe-author {
@@ -299,6 +357,72 @@ header-admin {
   margin-bottom: 10px;
 }
 
+/* CHEFS PAGE */
+.cards-chefs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  
+}
+
+.card-chefs {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  text-decoration: none;
+
+}
+
+.card-chefs div{
+  margin-left: 20px;
+}
+
+.card-chefs div :first-child{
+  font-size: 18px;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.card-chef-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6558C3;
+  text-decoration: none;
+  
+}
+.card-chefs-recipe-count {
+  font-size: 14px;
+  color: #666666;
+}
+
+.card-chefs img {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+}
+
+.chef-avatar {
+  text-align: center;
+}
+
+.chef-avatar img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin-bottom: 30px;
+  margin-top: 42px;
+}
+
+.chef-avatar h2 {
+  font-size: 36px;
+  color: #111111;
+  font-weight: 700;
+}
+
+.chef-avatar p {
+  font-size: 20px;
+  color: #777777;
+}
 
 /* ABOUT PAGE */
 

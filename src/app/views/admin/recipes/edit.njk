@@ -1,4 +1,4 @@
-{% extends "admin/layout.njk" %}
+{% extends "admin/recipes/layout.njk" %}
 
 
 {% block content %}
@@ -8,8 +8,10 @@
   <section class="admin-edit-title">
       <h2>Editando receita</h2>
         <span>
-          <form action="/admin/recipe/{{recipeIndex}}?_method=DELETE" method="POST">
+          <form action="/admin/recipe/{{items.id}}?_method=DELETE" method="POST">
             <button type="submit">Deletar</button>
+            <input type="hidden" name="id" value="{{items.id}}">
+
           </form>
         </span>
         <span>
@@ -17,13 +19,13 @@
         </span>
         
   </section>
-<form id="update" method="post" action="/admin/edit/{{recipeIndex}}?_method=PUT">
+<form id="update" method="post" action="/admin/edit/{{items.id}}?_method=PUT">
   <section class="details">
 
-    {% include 'admin/fields.njk' %}
+    {% include 'admin/recipes/fields.njk' %}
   
+    <input type="hidden" name="id" value="{{items.id}}">
   </section>
-
 </form>
 
 

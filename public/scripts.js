@@ -1,14 +1,4 @@
-const cards = document.querySelectorAll('.card')
 
-// Generate cards for recipes page and links
-for (let card of cards) {
-
-  card.addEventListener("click", function(){
-    const recipeId = card.getAttribute("id")
-    window.location.href = `/recipes/${recipeId}`
-
-  })
-}
 
 // Show/hide function
 function hideShow(cssClass, button) {
@@ -31,19 +21,12 @@ function hideShow(cssClass, button) {
 } 
 
 
-function addIngredientField() {
-  document.getElementById('ingredients').innerHTML += '<input type="text"  name="ingredients[]"  placeholder="Novo ingrediente" value=""><br>';
-}
-
-function addPrepareField(){
-  document.getElementById('prepare').innerHTML += '<input type="text"  name="preparation[]"  placeholder="Novo passo" value=""><br>';
-}
 
 // ADICIONAR CAMPO INGREDIENTES
 function addIngredient() {
   const ingredients = document.querySelector("#ingredients");
   const fieldContainer = document.querySelectorAll(".ingredient");
-  
+  if(!ingredients) return false
   // Realiza um clone do último ingrediente adicionado
   const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
   
@@ -55,15 +38,15 @@ function addIngredient() {
   ingredients.appendChild(newField);
   
 }
-
+if (document.querySelector(".add-ingredient")) {
 document.querySelector(".add-ingredient").addEventListener("click", addIngredient);
-
+}
 
 // ADICIONAR CAMPO PASSO
 function addPrepare() {
-  const ingredients = document.querySelector("#prepare");
+  const prepare = document.querySelector("#prepare");
   const fieldContainer = document.querySelectorAll(".prepareField");
-  
+  if(!prepare) return false
   // Realiza um clone do último ingrediente adicionado
   const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
   
@@ -72,8 +55,10 @@ function addPrepare() {
   
   // Deixa o valor do input vazio
   newField.children[0].value = "";
-  ingredients.appendChild(newField);
+  prepare.appendChild(newField);
   
 }
 
+if (document.querySelector(".add-prepare")) {
 document.querySelector(".add-prepare").addEventListener("click", addPrepare);
+}
