@@ -14,8 +14,7 @@ module.exports = {
       Recipes.find(req.params.id, function(recipe) {
         if (!recipe) return res.send("Recipe not found!")
     
-        const recipeIndex = req.params.index;
-        return res.render("admin/recipes/show", { items: recipe, recipeIndex })
+        return res.render("admin/recipes/show", { items: recipe })
       })
   },
   create(req, res) {
@@ -43,9 +42,8 @@ module.exports = {
     Recipes.find(req.params.id, function(recipe) {
       if (!recipe) return res.send("Recipe not found!")
         
-      const recipeIndex = req.params.id;
         Recipes.chefSelectOptions(function(options) {
-        return res.render("admin/recipes/edit", { items: recipe, recipeIndex, chefOptions: options})
+        return res.render("admin/recipes/edit", { items: recipe, chefOptions: options})
       })
     })  
   },
@@ -93,8 +91,36 @@ module.exports = {
     Chefs.find(req.params.id, function(chef) {
       if (!chef) return res.send("Chef not found!")
   
-      const recipeIndex = req.params.index;
-      return res.render("admin/chefs/show", { items: chef, recipeIndex})
+      return res.render("admin/chefs/show", { items: chef })
     })
-}
+  },
+  editChef(req, res) {
+    Chefs.find(req.params.id, function(chef) {
+      if (!chef) return res.send("Chef not found!")
+        
+      
+        
+        return res.render("admin/chefs/edit", { items: chef})
+      
+    })  
+  },
+  putChef(req,res) {
+    const keys = Object.keys(req.body)
+    const chefId = req.params.id;
+    
+    // for(key of keys) {
+    //   if(req.body[key] == "") {
+    //     return res.send('Please, fill all fields!')
+    //   }
+    // }
+    
+    Chefs.update(req.body, function() {
+      return res.redirect(`/admin/chefs/${chefId}`)
+    })
+  },
+  deleteChef(req,res) {
+    Chefs.delete(req.body.id, function() {  
+      return res.redirect(`/admin/chefs`)
+    })
+  }
 }
