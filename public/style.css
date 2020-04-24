@@ -365,8 +365,7 @@ header-admin {
   
 }
 
-.card-chefs a,
-.card-admin-chefs{
+.card-chefs {
   display: flex;
   text-align: left;
   align-items: center;
@@ -374,13 +373,11 @@ header-admin {
 
 }
 
-.card-chefs div,
-.card-admin-chefs div {
+.card-chefs div{
   margin-left: 20px;
 }
 
-.card-chefs a div :first-child,
-.card-admin-chefs div :first-child {
+.card-chefs div :first-child{
   font-size: 18px;
   color: #111111;
   margin-bottom: 10px;
@@ -398,8 +395,7 @@ header-admin {
   color: #666666;
 }
 
-.card-chefs img,
-.card-admin-chefs img {
+.card-chefs img {
   width: 64px;
   height: 64px;
   border-radius: 32px;
