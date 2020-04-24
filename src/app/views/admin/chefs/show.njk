@@ -3,19 +3,21 @@
 {% block head %}
       <title>Foodfy - Admin</title>
 {% endblock %}
-<section>
-  <div>
-    <img src="{{ items.avatar_url }}" alt="">
-    <h2>{{ items.name }}</h2>
-  </div>
-</section>
 
 {% block content %}
-  <section class="admin-show-title">
-      <h2>Receitas</h2>
-  </section>
+<section class="admin-show-title">
+  <h2>Chef: {{items.name}}</h2><span><a href="/admin/edit/{{items.id}}">Editar chef</a></span>
+</section>
 
-  {# <main class="admin-container">
+<section>
+  <div class="chef-avatar">
+    <img src="{{ items.avatar_url }}" alt="">
+    <h2>{{ items.name }}</h2>
+    <p>4 receitas</p>
+  </div>
+</section>
+ 
+<main class="admin-container">
     <div class="cards-main">
       <div class="cards-admin">
       {% for item in items %}
@@ -27,12 +29,16 @@
             <a href="/admin/recipes/{{item.id}}">Visualizar</a>     
           </div>
         </div>
-      {% endfor %} #}
+      {% endfor %}
 
-{#         
+        
       </div>
     </div>
-  </main> #}
+  </main>
+  
+
+
+
 
 
 {% endblock %}

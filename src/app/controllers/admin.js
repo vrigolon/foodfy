@@ -1,5 +1,3 @@
-// const fs = require('fs')
-// const data = require("../../../data.json")
 const Recipes = require('../models/Recipes')
 const Chefs = require('../models/Chefs')
 
@@ -22,7 +20,12 @@ module.exports = {
   },
   create(req, res) {
 
-    return res.render("admin/recipes/create")
+    Recipes.chefSelectOptions(function(options) {
+      
+      return res.render("admin/recipes/create", { chefOptions: options })
+    })
+
+
   },
   post(req,res) {
     const keys = Object.keys(req.body)
@@ -40,9 +43,10 @@ module.exports = {
     Recipes.find(req.params.id, function(recipe) {
       if (!recipe) return res.send("Recipe not found!")
         
-        const recipeIndex = req.params.id;
-        return res.render("admin/recipes/edit", { items: recipe, recipeIndex})
-      
+      const recipeIndex = req.params.id;
+        Recipes.chefSelectOptions(function(options) {
+        return res.render("admin/recipes/edit", { items: recipe, recipeIndex, chefOptions: options})
+      })
     })  
   },
   put(req,res) {

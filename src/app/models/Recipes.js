@@ -3,16 +3,22 @@ const db = require('../../config/db')
 
 module.exports = {
   all(callback) {
-    db.query(`SELECT * FROM recipes ORDER BY id`, function(err, results) {
+    db.query(`
+    SELECT recipes.*, chefs.name AS chef_name
+    FROM recipes
+    LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+    `, function(err, results) {
       if(err) throw `"Database Error!" ${err}`
 
       callback(results.rows)
     })
   },
   find(id, callback) {
+
     db.query(`
-    SELECT recipes.* 
+    SELECT recipes.*, chefs.name AS chef_name
     FROM recipes
+    LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
     WHERE recipes.id = $1`, [id], function(err, results) {
       if(err) throw `"Database Error!" ${err}`
       callback(results.rows[0])
@@ -33,7 +39,7 @@ module.exports = {
     `
 
     const values = [
-      data.chef_id, 
+      data.author, 
       data.image, 
       data.title, 
       data.ingredients, 
@@ -52,15 +58,17 @@ module.exports = {
   update(data, callback) {
     const query = `
     UPDATE recipes SET
-      image=($1),
-      title=($2),
-      ingredients=($3),
-      preparation=($4),
-      information=($5)
-      WHERE id = $6
+      chef_id=($1),
+      image=($2),
+      title=($3),
+      ingredients=($4),
+      preparation=($5),
+      information=($6)
+      WHERE id = $7
     `
 
     const values = [
+      data.author,
       data.image,
       data.title,
       data.ingredients,
@@ -91,6 +99,13 @@ module.exports = {
     GROUP BY recipes.id
     ORDER BY recipes.id DESC `, function(err, results) {
       if(err) throw `"Database Error!" ${err}`
+
+      callback(results.rows)
+    })
+  },
+  chefSelectOptions(callback) {
+    db.query(`SELECT name,id  FROM chefs`, function(err, results) {
+      if (err) throw `Database Error! ${err}`
 
       callback(results.rows)
     })

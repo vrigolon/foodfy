@@ -267,7 +267,8 @@ header-admin {
 
 .item input[type='text'],
 .item input[type='url'],
-.admin-info-textarea {
+.admin-info-textarea,
+.item select {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
@@ -279,7 +280,8 @@ header-admin {
 
   }
 
-.item input {
+.item input,
+.item select {
     margin-bottom: 10px;
     font-family: 'Roboto';
 }
@@ -399,6 +401,28 @@ header-admin {
   border-radius: 32px;
 }
 
+.chef-avatar {
+  text-align: center;
+}
+
+.chef-avatar img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin-bottom: 30px;
+  margin-top: 42px;
+}
+
+.chef-avatar h2 {
+  font-size: 36px;
+  color: #111111;
+  font-weight: 700;
+}
+
+.chef-avatar p {
+  font-size: 20px;
+  color: #777777;
+}
 
 /* ABOUT PAGE */
 

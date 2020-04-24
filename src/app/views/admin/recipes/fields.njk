@@ -15,17 +15,17 @@
     <div class="item">
       <div>Autor</div>
       <div>
-        <input 
-          type="text" 
-          name="author"
-          placeholder="Autor da receita"
-          value="{{ items.author }}"
-          >
+        <select name="author">
+          {% for chef in chefOptions %}
+          <option value="{{chef.id}}"
+          {% if items.chef_id == chef.id %}selected{% endif %}
+          >{{chef.name}}</option>
+          {%endfor%}   
+        </select>
       </div>
     </div>
-    
-    
-    
+
+   
     <div class="item">
       <div>Imagem da Receita</div>
       <div>
