@@ -13,7 +13,7 @@
   <div class="chef-avatar">
     <img src="{{ items.avatar_url }}" alt="">
     <h2>{{ items.name }}</h2>
-    <p>4 receitas</p>
+    <p>{{ items.total_recipes }} {% if items.total_recipes >= 2 %}receitas{% else %}receita{% endif %}</p>
   </div>
 </section>
  
@@ -21,7 +21,7 @@
     <div class="cards-main">
       <div class="cards-admin">
       {% for item in items %}
-        <div class="card-admin" id="{{items.indexOf(item)}}">
+        <div class="card-admin">
           <img src="{{item.image}}" alt="{{item.title}}">
           <div class="admin-recipe-details">
             <p class="recipe-name-admin">{{item.title}}</p>

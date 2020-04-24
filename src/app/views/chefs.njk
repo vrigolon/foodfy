@@ -14,7 +14,7 @@
           <img src="{{item.avatar_url}}" alt="{{item.title}}">
           <div>
             <p>{{item.name}}</p>
-            <p class="card-chefs-recipe-count">3 receitas</p> 
+            <p class="card-chefs-recipe-count">{{item.total_recipes}} {% if item.total_recipes >= 2 %}receitas{% else %}receita{% endif %}</p> 
           </div>
         </a>
       </div>
