@@ -38,6 +38,7 @@ main {
 .header-index {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  
 }
 
 .header-input {
@@ -341,7 +342,7 @@ header-admin {
 
 .card img {
   width: 300px;
-  max-height: 100px;
+  height: 140px;
   border-radius: 15px;
 }
 
