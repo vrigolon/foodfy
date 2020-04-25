@@ -18,14 +18,15 @@
 </section>
  
 <main class="admin-container">
+  <h2>Receitas</h2>
     <div class="cards-main">
       <div class="cards-admin">
-      {% for item in items %}
+      {% for item in recipes %}
         <div class="card-admin">
           <img src="{{item.image}}" alt="{{item.title}}">
           <div class="admin-recipe-details">
             <p class="recipe-name-admin">{{item.title}}</p>
-            <p class="recipe-author-admin">por {{item.author}}</p>
+            <p class="recipe-author-admin">por {{items.name}}</p>
             <a href="/admin/recipes/{{item.id}}">Visualizar</a>     
           </div>
         </div>

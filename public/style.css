@@ -38,6 +38,7 @@ main {
 .header-index {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  
 }
 
 .header-input {
@@ -81,7 +82,7 @@ main {
 
 .menu:hover {
   color: rgb(194, 78, 78);
-  font-weight: bold;
+  
 }
 
 .logo {
@@ -170,12 +171,14 @@ header-admin {
 .recipe-name-admin {
   font-size: 18px;
   color: #111111;
+  margin-bottom: 5px;
   
 }
 
 .recipe-author-admin {
   font-size: 14px;
   color: #777777;
+  margin-bottom: 10px;
 }
 
 .admin-recipe-details a {
@@ -339,7 +342,7 @@ header-admin {
 
 .card img {
   width: 300px;
-  max-height: 100px;
+  height: 140px;
   border-radius: 15px;
 }
 
@@ -403,6 +406,7 @@ header-admin {
 
 .chef-avatar {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .chef-avatar img {
@@ -422,6 +426,10 @@ header-admin {
 .chef-avatar p {
   font-size: 20px;
   color: #777777;
+}
+
+.admin-container h2 {
+  margin-bottom: 30px;
 }
 
 /* ABOUT PAGE */

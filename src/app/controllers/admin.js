@@ -90,8 +90,10 @@ module.exports = {
   detailChef(req, res) {
     Chefs.find(req.params.id, function(chef) {
       if (!chef) return res.send("Chef not found!")
-  
-      return res.render("admin/chefs/show", { items: chef })
+
+      Chefs.findRecipes(req.params.id, function(recipes) {
+        return res.render("admin/chefs/show", { items: chef, recipes })
+      })
     })
   },
   editChef(req, res) {

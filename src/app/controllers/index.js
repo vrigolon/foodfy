@@ -9,7 +9,7 @@ module.exports = {
     if(filter) {
 
       Recipes.findBy(filter, function(recipes) {
-        return res.render("recipes", { items: recipes, filter})
+        return res.render("search", { items: recipes, filter})
 
 
       })
